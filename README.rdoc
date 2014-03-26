@@ -3,18 +3,21 @@
   Application ruby on rails pour gerer et calculer les stat des parties de pingpong
 
 == fonction
+
 	gere les parties
 	utilise l'algorithme d'ELO pour le classement
 	Trace une courbe d'evolution du joueur
 	etc...
-	
+
 == Développé en
 
   ruby on rails
 
 == Systeme
-	rails v 4.0.2
-	ruby  v 1.9.3p484
+
+	==rails v 4.0.2
+
+	==ruby  v 1.9.3p484
 
 == Developpeur
 
