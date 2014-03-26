@@ -5,8 +5,11 @@
 == fonction
 
 	*	gere les parties
+
 	*	utilise l'algorithme d'ELO pour le classement
+
 	*	Trace une courbe d'evolution du joueur
+	
 	*	etc...
 
 == Développé en
