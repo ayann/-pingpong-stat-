@@ -1,0 +1,75 @@
+<div class="row" id="all_player">
+	<% if @players.blank? %>
+		<h1>Aucune partie Enregistrée</h1>
+	<% else %>
+		<div class="row info">
+			<span>Pour être classé un joueur doit avoir participer au minimun à 3 parties </span>
+		</div>
+		<div class="large-6 small-12 columns">
+			<div class="panel">
+				<h2>Joueur classé</h2>
+				<table width="100%"> 
+					<thead> 
+						<tr> 
+							<th >Nom</th> 
+							<th >Point Elo</th> 
+							<th >Variation</th> 
+							<th >Voir ses Stat</th> 
+						</tr> 
+					</thead> 
+					<tbody>
+						<% @players.each do |player| %>
+							<% if player.classe %>
+								<tr> 
+									<td><%= player.name %></td> 
+									<td><%= player.elo %></td> 
+									<td>
+										<% if player.variation >0 %>
+											+<%= player.variation %>
+										<% else %>
+											<%= player.variation %>
+										<% end %>
+									</td> 
+									<td><%= link_to ">>", home_path(player.id) %></td> 
+								</tr> 
+							<% end %>
+						<% end %> 
+					</tbody> 
+				</table>
+			</div>
+		</div>
+		<div class="large-6 small-12 columns">
+			<div class="panel">
+				<h2>Joueur non classé</h2>
+				<table width="100%"> 
+					<thead> 
+						<tr> 
+							<th>Nom</th> 
+							<th>Point Elo</th> 
+							<th>Variation</th> 
+							<th>Voir ses Stat</th> 
+						</tr> 
+					</thead> 
+					<tbody>
+						<% @players.each do |player| %>
+							<% unless player.classe %>
+								<tr> 
+									<td><%= player.name %></td> 
+									<td><%= player.elo %></td> 
+									<td>
+										<% if player.variation >0 %>
+											+<%= player.variation %>
+										<% else %>
+											<%= player.variation %>
+										<% end %>
+									</td> 
+									<td><%= link_to ">>", home_path(player.id) %></td> 
+								</tr> 
+							<% end %>
+						<% end %> 
+					</tbody> 
+				</table>
+			</div>
+		</div>
+	<% end %>
+</div>

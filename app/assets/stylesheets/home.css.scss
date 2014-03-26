@@ -1,0 +1,63 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+body{
+	.formulaire_match{
+
+		.name{
+			width: 40%;
+			float: left;
+		}
+		.score{
+			width: 40%;
+			float: right;
+		}
+		.button{
+			font-size: 1.1em;
+		}
+	}
+	#all_player{
+		a:hover{
+			background: none;
+			color:#333333;
+		}
+		.panel{
+			background: none repeat scroll 0 0 #FFFFFF;
+		   	border: 1px solid #E5E5E5;
+		   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+		   	font-weight: normal;
+		   	th{
+		   		color:darken(#EEEEEE,60) !important;
+		   	}
+		   	h1,h2,h3{
+		   		color:darken(#EEEEEE,30);
+		   	}
+		}
+	}
+	#stat{
+		background: none repeat scroll 0 0 #FFFFFF;
+	   	border: 1px solid #E5E5E5;
+	   	box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+	   	font-weight: normal;
+	   	p{
+	   		font-size: 1.2em;
+	   	}
+	}
+	table{
+		text-align: center;
+		vertical-align: middle;
+		th{
+			text-align: center !important;
+		}
+	}
+	div.info{
+		text-align: center;
+		margin: 20px 0 !important;
+		font-size: 1.6em;
+		font-style: italic;
+		color:darken(#EEEEEE,30);
+
+	}
+	
+}

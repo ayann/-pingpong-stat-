@@ -1,0 +1,18 @@
+<%= simple_form_for :match ,:url => { :controller => "home", :action => "create" }, :html => {:method => :post} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  	<%= f.input :player_1, label:'Nom Joueur 1',   wrapper_html: { class: 'name' } %>
+  	<%= f.input :score_1,  label:'score Joueur 1', wrapper_html: { class: 'score' }%>
+	<%= content_tag :div,'',:class =>"clear" %>
+	
+  	<%= f.input :player_2, label:'Nom Joueur 2',   wrapper_html: { class: 'name' }%>
+  	<%= f.input :score_2,  label:'score Joueur 2', wrapper_html: { class: 'score' }%>
+	<%= content_tag :div,'',:class =>"clear" %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Enregistrer la partie',:class => 'button tiny expand' %>
+  </div>
+<% end %>

@@ -1,0 +1,80 @@
+<% content_for :script_sec do %>
+	<%= javascript_include_tag "highcharts" %>
+<% end %>
+<script type="text/javascript">
+	$(function () {
+        $('#container').highcharts({
+            title: {
+                text: 'Statistique de <%=  @player.name %>',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Statistique par date et par point',
+                x: -20
+            },
+            xAxis: {
+                categories: [
+                	<% @partie.each do |partie| %>
+                		'<%= partie.created_at.strftime("%d %b %Y %T").to_s%>'
+                		<%= ',' %>
+                	<% end %>
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Nombre de point'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ' points'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '<%=  @player.name %>',
+                data: [
+	                <% @partie.each do |partie| %>
+	                	<%= partie.score_1%>
+	                	<%= ',' %>
+	                <% end %>
+                ]
+
+            }]
+        });
+	});
+</script>
+<div class="row">
+	<div class="large-6 small-12 columns">
+		<div class="panel" id="stat">
+            <p>Nom : <%=@player.name %></p>
+            <p>Nombre de partie jouée : <%=@player.nb_match %></p>
+            <p>Point elo : 
+                <% if @player.elo %>
+                    <%= @player.elo %>
+                <% else %>
+                    0
+                <% end %>
+            </p>
+            <p>Classé :
+                <% if @player.classe %>
+                    Oui
+                <% else %>
+                    Non
+                <% end %>
+            </p>
+        </div>
+	</div>
+	<div class="large-6 small-12 columns">
+		<div id="container" style="height: 400px; margin: 0 auto"></div>
+	</div>
+</div>
+    <br><br>
