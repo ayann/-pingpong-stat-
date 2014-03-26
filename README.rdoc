@@ -4,10 +4,10 @@
 
 == fonction
 
-	gere les parties
-	utilise l'algorithme d'ELO pour le classement
-	Trace une courbe d'evolution du joueur
-	etc...
+	*	gere les parties
+	*	utilise l'algorithme d'ELO pour le classement
+	*	Trace une courbe d'evolution du joueur
+	*	etc...
 
 == Développé en
 
@@ -15,9 +15,9 @@
 
 == Systeme
 
-	==rails v 4.0.2
+	*	rails v 4.0.2
 
-	==ruby  v 1.9.3p484
+	*	ruby  v 1.9.3p484
 
 == Developpeur
 
